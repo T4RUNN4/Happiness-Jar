@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}New Memory{% endblock %}
+
+{% block main %}
+<div class="container col-md-8 col-lg-6 mt-5">
+
+    <h2 class="mb-4 text-start">Add a New Memory</h2>
+
+    <form action="/new" method="POST">
+        <div class="mb-2">
+            <textarea class="form-control" id="memory" name="memory" rows="4" placeholder="Write something that made you happy..." required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <select class="form-select" id="mood" name="mood">
+                <option value="">Choose a mood</option>
+                <option value="Happy">😊 Happy</option>
+                <option value="Excited">😄 Excited</option>
+                <option value="Grateful">🙏 Grateful</option>
+                <option value="Peaceful">🧘 Peaceful</option>
+                <option value="Other">🎨 Other</option>
+            </select>
+        </div>
+
+        <a href="/" class="btn btn-secondary rounded-pill px-4 py-2 shadow-sm">Cancel</a>
+        <button class="btn btn-primary rounded-pill px-4 py-2 shadow-sm" type="submit">Save Memory</button>
+    </form>
+</div>
+{% endblock %}
