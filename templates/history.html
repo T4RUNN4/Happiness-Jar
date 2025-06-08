@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div class="container mt-4">
+        <h2 class="mb-4 text-center">Your Happy Memories 📝</h2>
+
+        {% if memories %}
+            <div class="row gy-3">
+                {% for memory in memories %}
+                    <div class="col-12">
+                        <div class="p-4 rounded-4 shadow-sm" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="fw-bold">{{ memory.mood | capitalize }}</span>
+                                <small class="text-muted">{{ memory.created_at }}</small>
+                            </div>
+                            <p class="mb-0">{{ memory.memory }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="alert alert-info text-center" role="alert">
+                You haven’t added any memories yet. <a href="/new" class="alert-link">Start now</a>!
+            </div>
+        {% endif %}
+    </div>
+    </br></br>
+    <div class="d-flex justify-content-end gap-2 mb-4">
+        <a href="/export?format=csv" class="btn btn-outline-primary btn-sm">Export as CSV</a>
+        <a href="/export?format=json" class="btn btn-outline-success btn-sm">Export as JSON</a>
+        <a href="/export?format=txt" class="btn btn-outline-secondary btn-sm">Export as TXT</a>
+    </div>
+
+{% endblock %}
