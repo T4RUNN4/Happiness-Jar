@@ -1,4 +1,5 @@
 # Happiness Jar
+![Homepage](/static/thumbnail.jpg)
 #### Description:
 
 **Happiness Jar** is a digital adaptation of the well-known "Happiness Jar" concept. Inspired by the challenges of keeping physical jars in a small, shared workspace, this project was born out of a desire to create a private, secure, and mess-free version of the idea. Built using Flask, SQLite, HTML, CSS, JavaScript, and Bootstrap, this web app allows users to register, log in, and interact with their own virtual happiness jar.
